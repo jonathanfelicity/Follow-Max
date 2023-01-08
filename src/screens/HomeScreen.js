@@ -12,6 +12,7 @@ import { Loader, Menu, Tool } from '../components'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useContext, useEffect, useState } from 'react';
 
+
   
   
 import { styles, option, tools } from '../res/index'
@@ -36,6 +37,7 @@ import { UserContext } from '../context/UserContext';
     }
     return (
       <View style={[ styles.container, { marginBottom: 20, } ]}>
+       
         <TouchableOpacity style={{ alignSelf: 'flex-end', width: 45, height: 45, borderRadius: 45/2, borderWidth: 1, justifyContent: 'center', alignItems: 'center'}}
           onPress={()=>navigation.navigate('ProfileScreen')}
         >

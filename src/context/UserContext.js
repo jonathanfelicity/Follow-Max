@@ -3,7 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
 
-const SERVER_BASE_URI = 'https://followng.pythonanywhere.com/api/v1'
+const SERVER_BASE_URI = 'https://maxapi.pythonanywhere.com/api/v1'
 const INSTAGRAM_BASE_URI = 'https://i.instagram.com/api/v1'
 
 export const UserContext = createContext()
