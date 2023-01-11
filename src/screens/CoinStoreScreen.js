@@ -6,7 +6,7 @@ import Icon from "react-native-vector-icons/Ionicons"
 
 
 
-const BuyCoinScreen = () => {
+const CoinStoreScreen = () => {
     return (
         <View style={[styles.container]}>
             <Text style={{ fontSize: 32, textAlign: "center" }}>Buy Coins</Text>
@@ -37,4 +37,4 @@ const BuyCoinScreen = () => {
 }
 
 
-export default BuyCoinScreen
+export default CoinStoreScreen

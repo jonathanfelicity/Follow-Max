@@ -69,7 +69,7 @@ import { UserContext } from '../context/UserContext';
               </View>
               <View>
                 <TouchableOpacity
-                  onPress={()=> navigation.navigate('BuyCoinScreen')}
+                  onPress={()=> navigation.navigate('CoinStoreScreen')}
                   style={{ width: 50, height: 50, backgroundColor: colors.yellow, borderRadius: 50/2, justifyContent: 'center', alignItems: 'center'}}
                  
                 >
