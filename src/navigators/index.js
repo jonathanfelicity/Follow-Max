@@ -5,7 +5,6 @@ import Root from "./Root"
 
 export {
     AuthStack,
-    AppStack,
-    
+    AppStack, 
     Root,
 }

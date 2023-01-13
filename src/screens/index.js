@@ -5,6 +5,7 @@ import WalletScreen from "./WalletScreen";
 import CoinStoreScreen from "./CoinStoreScreen";
 import CampaignScreen from "./CampaignScreen";
 import ProfileScreen from "./ProfileScreen";
+import MineCoinScreen from "./MineCoinScreen";
 
 
 export {
@@ -14,5 +15,6 @@ export {
     WalletScreen,
     CampaignScreen,
     ProfileScreen,
-    CoinStoreScreen
+    CoinStoreScreen,
+    MineCoinScreen
 }

@@ -25,10 +25,27 @@ import { UserContext } from '../context/UserContext';
     const { userInfor } = useContext(UserContext)
     const [isVisible, setIsvisible ] = useState(false)
 
+    const menuHandler = (id) =>{
+        switch(id){
+          case 1:
+            navigation.navigate('CampaignScreen')
+          break
+
+          case 5:
+              navigation.navigate('MineCoinScreen')
+            break
+          
+          case 3:
+                break
+          default:
+            console.log('am confuse bro')
+        }
+    }
+
     useEffect(()=>{
       const timer = setTimeout(()=>{
           setIsvisible(true)
-      }, 3000)
+      }, 2000)
 
       return ()=>clearTimeout(timer)
     }, [])
@@ -57,7 +74,7 @@ import { UserContext } from '../context/UserContext';
         )}
          
          <View style={{ marginTop: 30}}>
-          <Text style={{ fontSize: 20, fontWeight: '500', color: colors.darkBlue}}>Account Overview</Text>
+          <Text style={{ fontSize: 20, fontWeight: '500', color: colors.darkBlue}}>Overview</Text>
           <View style={{width: '100%', height:100, backgroundColor: colors.grey, borderRadius: 20, alignItems: 'center', paddingHorizontal: 20, flexDirection: 'row', justifyContent: 'space-between', marginTop: 10}}>
 
               <View>
@@ -87,7 +104,7 @@ import { UserContext } from '../context/UserContext';
             data={option}
             renderItem={ ({item})=>(
               <Menu 
-              onPress={()=>navigation.navigate('CampaignScreen')}
+              onPress={()=> menuHandler(item.id)}
                 title={item.title}
                 color={item.color}
                 icon={item.icon}

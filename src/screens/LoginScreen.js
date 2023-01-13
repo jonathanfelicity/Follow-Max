@@ -27,8 +27,14 @@ const LoginScreen = () => {
 
         <KeyboardAvoidingView style={[styles.container, { justifyContent: "center" }]}>
             <View style={{ marginBottom: 40 }}>
-                <Lottie style={{ width: 200, alignSelf: 'center'}} source={require('../res/lottie/social.json')} autoPlay loop />
-                <Text style={{ fontSize: 32, textAlign: 'center' }}>Welcome to Follow Max </Text>
+                <Lottie 
+                    style={{ width: 200, alignSelf: 'center'}} 
+                    source={require('../res/lottie/social.json')} 
+                    autoPlay loop 
+                />
+                <Text 
+                    style={{ fontSize: 32, textAlign: 'center' }}
+                >Welcome to Follow Max </Text>
 
             </View>
             <View style={{ marginBottom: 20 }}>

@@ -5,7 +5,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { 
   CampaignScreen, 
   HomeScreen, 
-  ProfileScreen
+  ProfileScreen,
+  MineCoinScreen
 
 } from '../screens';
 import CoinStoreScreen from '../screens/CoinStoreScreen';
@@ -21,6 +22,7 @@ const AppStack = () => {
       <Stack.Screen name="CoinStoreScreen" component={CoinStoreScreen} />
       <Stack.Screen name="CampaignScreen" component={CampaignScreen}/>
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Screen name="MineCoinScreen" component={MineCoinScreen} />
     </Stack.Navigator>
   );
 };

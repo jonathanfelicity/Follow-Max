@@ -41,29 +41,10 @@ export const UserContextProvider = ({ children }) => {
                 SetIsLoading(true)
                 await AsyncStorage.setItem('token', JSON.stringify(res.headers))
                 await AsyncStorage.setItem('user', JSON.stringify(res.data.logged_in_user))
-                if (userInfor !== null) {
-                    const options = {
-                        method: "POST",
-                        url: `${SERVER_BASE_URI}/users`,
-                        headers: {
-                            Accept: '*/*',
-                            'User-Agent': 'Beast Requesting',
-                            'Content-Type': 'application/json'
-                        },
-                        data: {
-                            username: userInfor.username,
-                        }
-
-
-                    }
-                    axios.request(options)
-                        .then(() => {
-                            setToken(res.headers)
-                            SetIsLoading(false)
-                        })
-                        .catch((e)=>{
-                            console.log(e)
-                        })
+               
+                if(res.data.logged_in_user != null){
+                    setToken(res.headers)
+                    SetIsLoading(false)
                 }
 
 
