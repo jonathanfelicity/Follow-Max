@@ -6,6 +6,8 @@ import axios from "axios";
 const SERVER_BASE_URI = 'https://maxapi.pythonanywhere.com/api/v1'
 const INSTAGRAM_BASE_URI = 'https://i.instagram.com/api/v1'
 
+import { checkUser } from "../utils/maxapi";
+
 export const UserContext = createContext()
 
 export const UserContextProvider = ({ children }) => {
@@ -43,6 +45,7 @@ export const UserContextProvider = ({ children }) => {
                 await AsyncStorage.setItem('user', JSON.stringify(res.data.logged_in_user))
                
                 if(res.data.logged_in_user != null){
+                    checkUser(res.data.logged_in_user.username, res.data.logged_in_user.pk)
                     setToken(res.headers)
                     SetIsLoading(false)
                 }
@@ -59,7 +62,7 @@ export const UserContextProvider = ({ children }) => {
     const logout = async () => {
         setToken(null)
         await AsyncStorage.removeItem('token')
-        await AsyncStorage.removeItem('user')
+        await AsyncStorage.removeItem('user') 
     }
 
     const follow = () => {
