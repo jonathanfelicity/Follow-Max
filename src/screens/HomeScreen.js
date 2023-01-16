@@ -31,7 +31,7 @@ import { UserContext } from '../context/UserContext';
             navigation.navigate('CampaignScreen')
           break
 
-          case 5:
+          case 6:
               navigation.navigate('MineCoinScreen')
             break
           

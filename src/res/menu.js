@@ -29,14 +29,14 @@ const option = [
       icon: 'wallet-outline'
     },
     {
-      id: 4,
+      id: 5,
       title: 'Notification',
       caption: 0,
       color: colors.blue,
       icon: 'notifications-outline'
     },
     {
-      id: 4,
+      id: 6,
       title: 'Minecoins',
       caption: 0,
       color: colors.blue,

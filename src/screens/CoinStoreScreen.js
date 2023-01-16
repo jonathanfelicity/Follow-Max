@@ -12,6 +12,7 @@ import Lottie from 'lottie-react-native';
 
 import { colors, icons } from "../constants"
 import { styles, coin_price } from "../res"
+import { Button } from "../components";
 
 
 
@@ -52,7 +53,7 @@ const CoinStoreScreen = () => {
                 visible={modalVisible}
                 onRequestClose={() => setModalVisible(false)}
             >
-                <View style={{ flex: 1, justifyContent: "center", alignItems: 'center', padding: 20}}>
+                <View style={{ flex: 1, alignItems: 'center', padding: 20}}>
                     <Lottie 
                         style={{height: 400}}
                         source={require('../res/lottie/error.json')}
@@ -61,8 +62,11 @@ const CoinStoreScreen = () => {
                     <Text style={{
                         textAlign: 'center',
                         color: 'red',
-                        fontSize: 16
+                        fontSize: 16,
+                        marginBottom: 20
                     }}>Application encontered an error connecting to payment server.</Text>
+                    
+                    <Button title="Continue with manual transfer"/>
                 </View>
             </Modal>
 
