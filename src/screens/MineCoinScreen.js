@@ -1,6 +1,7 @@
 import { View, Text, FlatList, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { colors } from "../constants";
+import { Reward } from "./Ads";
 
 const MineCoinScreen = ()=>{
     return (
@@ -33,6 +34,7 @@ const MineCoinScreen = ()=>{
                             fontWeight: "bold"
                         }}>LIKE</Text>
                    </TouchableOpacity>
+                   <Reward/>
                 </View>
             </View>
 

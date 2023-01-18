@@ -11,6 +11,7 @@ import {
 import { Loader, Menu, Tool } from '../components'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useContext, useEffect, useState } from 'react';
+import { userBalance } from '../utils/maxapi';
 
 
   
@@ -24,7 +25,7 @@ import { UserContext } from '../context/UserContext';
   const HomeScreen = ({ navigation }) => {
     const { userInfor } = useContext(UserContext)
     const [isVisible, setIsvisible ] = useState(false)
-
+  
     const menuHandler = (id) =>{
         switch(id){
           case 1:
@@ -32,7 +33,7 @@ import { UserContext } from '../context/UserContext';
           break
 
           case 6:
-              navigation.navigate('MineCoinScreen')
+              navigation.navigate('MineTab')
             break
           
           case 3:
@@ -80,7 +81,7 @@ import { UserContext } from '../context/UserContext';
               <View>
                   
                 <Image style={{ width: 30, height: 30 }} source={icons.coin} />
-                <Text style={{ fontSize: 24, color: colors.black, fontWeight: 'bold'}}>2000.0</Text>
+                <Text style={{ fontSize: 24, color: colors.black, fontWeight: 'bold'}}>{ userBalance(userInfor.username) }</Text>
                   
                 <Text style={{ fontSize: 16, color: colors.darkBlue}}>Current Coin Balance</Text>
               </View>

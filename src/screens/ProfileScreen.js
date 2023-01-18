@@ -5,6 +5,7 @@ import { UserContext } from "../context/UserContext"
 import { colors } from "../constants"
 import { styles } from "../res"
 import { TouchableOpacity } from "react-native-gesture-handler"
+import { Banner } from "./Ads"
 
 const ProfileScreen = () =>{
     const { userInfor, logout, getFollowers } = useContext(UserContext)
@@ -45,9 +46,12 @@ const ProfileScreen = () =>{
                     <Text style={{ textAlign: "center", fontWeight: 'bold', fontSize: 20}}>23</Text>
                 </View>
             </View>
-            <TouchableOpacity style={{ padding: 16, backgroundColor: colors.red}} onPress={ handleLogout }>
+            <TouchableOpacity style={{ padding: 16, backgroundColor: colors.red, marginBottom: 20}} onPress={ handleLogout }>
                 <Text style={{ fontWeight: '600', color:colors.white, textAlign: "center"}}>Logout</Text>
             </TouchableOpacity>
+            <Banner/>
+            <Banner/>
+            <Banner/>
         </View>
         
     )

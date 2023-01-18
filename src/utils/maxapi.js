@@ -54,8 +54,8 @@ const userBalance = (username)=>{
     };
 
     axios.request(options)
-        .then((balance) => {
-           return balance
+        .then((res) => {
+           return res.balance
         })
         .catch((e)=>{
             console.log(e)

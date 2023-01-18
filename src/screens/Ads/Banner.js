@@ -1,18 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
-import GoogleMobileAds from 'react-native-google-mobile-ads';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-const Banner = () => {
+const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
+
+const Banner = ()=> {
   return (
-    <View>
-      <GoogleMobileAds.Banner
-        adSize="banner"
-        adUnitID="ca-app-pub-xxxxxxxxxxxxx/xxxxxxxxxx"
-        testDevices={[GoogleMobileAds.SimulatorId]}
-        onAdFailedToLoad={error => console.error(error)}
-      />
-    </View>
+    <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.FULL_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
   );
-};
+}
 
-export default Banner;
+
+export default Banner

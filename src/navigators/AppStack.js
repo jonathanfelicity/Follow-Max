@@ -10,6 +10,7 @@ import {
 
 } from '../screens';
 import CoinStoreScreen from '../screens/CoinStoreScreen';
+import MineTab from './MineTab';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const AppStack = () => {
       <Stack.Screen name="CampaignScreen" component={CampaignScreen}/>
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       <Stack.Screen name="MineCoinScreen" component={MineCoinScreen} />
+      <Stack.Screen name="MineTab" component={MineTab}/>
     </Stack.Navigator>
   );
 };
