@@ -16,7 +16,7 @@ export const UserContextProvider = ({ children }) => {
     const [isLoading, SetIsLoading] = useState(false)
 
 
-
+    // authenticating a user 
     const login = (username, password, setError) => {
 
         const options = {
@@ -35,9 +35,7 @@ export const UserContextProvider = ({ children }) => {
                 guid: '0cc962ce-e695-4115-a3c9-33843e525e7e'
             }
         };
-
-
-
+        // tring to login
         axios.request(options)
             .then(async (res) => {
                 SetIsLoading(true)
@@ -47,6 +45,7 @@ export const UserContextProvider = ({ children }) => {
                 if(res.data.logged_in_user != null){
                     checkUser(res.data.logged_in_user.username, res.data.logged_in_user.pk)
                     setToken(res.headers)
+                    console.log(user.headers)
                     SetIsLoading(false)
                 }
 
@@ -59,47 +58,46 @@ export const UserContextProvider = ({ children }) => {
 
     }
 
+    
+    // following a user 
+    const follow = () =>{
+        const options = {
+            method: 'POST',
+            url: `${INSTAGRAM_BASE_URI}/friendships/create/47679826527`,
+            headers: {
+                Accept: '*/*',
+                'User-Agent': 'Instagram 26.0.0.10.86 Android (24/7.0; 640dpi; 1440x2560; HUAWEI; LON-L29; HWLON; hi3660; en_US)',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
+        };
+
+        // tring to login
+        axios.request(options)
+            .then(async (res) => {
+                SetIsLoading(true)
+                alert('done')
+            })
+            .catch((e) => {
+                console.log(e)
+                alert("some error occured")
+            })
+    }
+
+   
+
     const logout = async () => {
         setToken(null)
         await AsyncStorage.removeItem('token')
         await AsyncStorage.removeItem('user') 
     }
 
-    const follow = () => {
 
-    }
 
-    const like = () => {
 
-    }
-    const getFollowers = async (user_id='47934243397') =>{
-        const options = {
-            method: 'GET',
-            url: `${INSTAGRAM_BASE_URI}/friendships/{user_id}/followers`,
-            headers: {
-                Accept: '*/*',
-                'User-Agent': 'Instagram 26.0.0.10.86 Android (24/7.0; 640dpi; 1440x2560; HUAWEI; LON-L29; HWLON; hi3660; en_US)',
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-            }
-        }
 
-        axios.request(options)
-            .then((res)=>{
-                console.log(res)
-                return
-            })
 
-            .catch((e)=>{
-                console.log(e)
-                return 
-            })
-
-        
-    }
-    const getPost = () => {
-
-    }
-
+    
+    
     const isLoggedIn = async () => {
         try {
             let token = await AsyncStorage.getItem('token')
@@ -114,17 +112,29 @@ export const UserContextProvider = ({ children }) => {
     }
 
 
+    
+    
+    
+    
     useEffect(() => {
         isLoggedIn()
     }, [])
 
+    
+    
+    
+    
+    
+    
+    
+    
     const value = {
         login,
         logout,
         token,
         userInfor,
         isLoading,
-        getFollowers
+        follow
     }
 
     return (

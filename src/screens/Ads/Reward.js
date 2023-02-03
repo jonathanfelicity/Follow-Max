@@ -35,7 +35,8 @@ const Reward = ()=> {
 
   // No advert ready to show yet
   if (!loaded) {
-    return null;
+    alert("Loading your next")
+    return
   }
 
   return (

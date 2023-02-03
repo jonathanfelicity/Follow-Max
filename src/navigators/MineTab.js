@@ -1,5 +1,6 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { MineCoinScreen } from '../screens';
+import { FollowMine, LikeMine,  AdMine} from '../components';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -7,8 +8,12 @@ const Tab = createMaterialTopTabNavigator();
 
 const MineTab = () =>{
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="MineCoinScreen" component={MineCoinScreen} />
+    <Tab.Navigator
+      screenOptions={{headerShown: false}}
+    >
+      <Tab.Screen name="FollowMine" component={FollowMine} />
+      <Tab.Screen name="LikeMine" component={LikeMine} />
+      <Tab.Screen name="AdMine" component={AdMine} />
       
     </Tab.Navigator>
   );

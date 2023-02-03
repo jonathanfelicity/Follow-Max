@@ -8,11 +8,8 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 import { Banner } from "./Ads"
 
 const ProfileScreen = () =>{
-    const { userInfor, logout, getFollowers } = useContext(UserContext)
+    const { userInfor, logout } = useContext(UserContext)
 
-    useEffect(()=>{
-        getFollowers()
-    }, [])
     const handleLogout = ()=>{
         logout()
     }

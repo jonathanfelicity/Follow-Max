@@ -24,6 +24,7 @@ const slides = [
   },
 ];
 
+
 const WelcomeScreen = ({ navigation }) => {
   const [showHomePage, setShowHomePage] = useState(false);
   const buttonLabel = label => {

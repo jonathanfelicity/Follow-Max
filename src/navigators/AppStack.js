@@ -6,7 +6,8 @@ import {
   CampaignScreen, 
   HomeScreen, 
   ProfileScreen,
-  MineCoinScreen
+  UserPost,
+  MineCoinScreen,
 
 } from '../screens';
 import CoinStoreScreen from '../screens/CoinStoreScreen';
@@ -24,6 +25,7 @@ const AppStack = () => {
       <Stack.Screen name="CampaignScreen" component={CampaignScreen}/>
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       <Stack.Screen name="MineCoinScreen" component={MineCoinScreen} />
+      <Stack.Screen name="UserPost" component={UserPost}/>
       <Stack.Screen name="MineTab" component={MineTab}/>
     </Stack.Navigator>
   );

@@ -11,10 +11,11 @@ import {
 import { Loader, Menu, Tool } from '../components'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useContext, useEffect, useState } from 'react';
-import { userBalance } from '../utils/maxapi';
 
 
-  
+
+
+
   
 import { styles, option, tools } from '../res/index'
 import { colors, icons } from '../constants'
@@ -23,13 +24,15 @@ import { UserContext } from '../context/UserContext';
 
   
   const HomeScreen = ({ navigation }) => {
-    const { userInfor } = useContext(UserContext)
+    const { userInfor, token } = useContext(UserContext)
     const [isVisible, setIsvisible ] = useState(false)
-  
     const menuHandler = (id) =>{
         switch(id){
           case 1:
             navigation.navigate('CampaignScreen')
+          break
+          case 2:
+            navigation.navigate('UserPost')
           break
 
           case 6:
@@ -43,8 +46,13 @@ import { UserContext } from '../context/UserContext';
         }
     }
 
+    const [text, setText] = useState('');
+
+  
+
     useEffect(()=>{
       const timer = setTimeout(()=>{
+        
           setIsvisible(true)
       }, 2000)
 
@@ -53,6 +61,8 @@ import { UserContext } from '../context/UserContext';
     if(!isVisible){
       return <Loader/>
     }
+
+
     return (
       <View style={[ styles.container, { marginBottom: 20, } ]}>
        
@@ -81,7 +91,7 @@ import { UserContext } from '../context/UserContext';
               <View>
                   
                 <Image style={{ width: 30, height: 30 }} source={icons.coin} />
-                <Text style={{ fontSize: 24, color: colors.black, fontWeight: 'bold'}}>{ userBalance(userInfor.username) }</Text>
+                <Text style={{ fontSize: 24, color: colors.black, fontWeight: 'bold'}}>{ 50 }</Text>
                   
                 <Text style={{ fontSize: 16, color: colors.darkBlue}}>Current Coin Balance</Text>
               </View>
